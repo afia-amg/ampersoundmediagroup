@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- skill:chrome -->
+<style>
+/* Credit line — bottom-right */
+.design-ui-credit {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font: 11px/1 system-ui, sans-serif;
+  color: rgba(128,128,128,0.5);
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: opacity 0.4s ease;
+  user-select: none;
+  letter-spacing: 0.02em;
+}
+
+/* Hide chrome on touch devices */
+@media (hover: none) {
+  .design-ui-credit { display: none; }
+}
+
+/* Print fixes */
+@media print {
+  * {
+    transition: none !important;
+    animation: none !important;
+    box-shadow: none !important;
+  }
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .design-ui-credit { display: none !important; }
+}
+
+</style>
+<script>
+(function () {
+    // Chrome UI (hover devices only): credit badge with idle-fade.
+    // Deferred until body exists since the script may run in <head>.
+    function initChromeUI() {
+        if (!matchMedia('(hover: hover)').matches) return;
+
+        var credit = document.createElement('div');
+        credit.className = 'design-ui-credit';
+        credit.setAttribute('aria-hidden', 'true');
+        credit.innerHTML = '\u{1F49C} by ClickUp Brain';
+        document.body.appendChild(credit);
+
+        var timer = null;
+        var fade = function (out) { credit.style.opacity = out ? '0' : ''; };
+        fade(true);
+        var show = function () {
+            fade(false);
+            clearTimeout(timer);
+            timer = setTimeout(function () { fade(true); }, 3000);
+        };
+        document.addEventListener('mousemove', show);
+        show();
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initChromeUI);
+    } else {
+        initChromeUI();
+    }
+})();
+
+</script>
+<!-- /skill:chrome -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keynote Speaking | Ampersound Media Group</title>
+<meta name="description" content="Keynote and motivational speaking by Afia Chin-Roberts. 18+ years of experience across 250+ events.">
+<link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/d/1ZbSz3kyKEK7LksxdpRTY0VecGDGxqYDM">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@200;300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--obsidian:oklch(14% 0.01 270);--obsidian-light:oklch(18% 0.008 270);--sand:oklch(85% 0.02 75);--sand-light:oklch(92% 0.015 75);--bronze:oklch(55% 0.1 65);--bronze-light:oklch(62% 0.09 65);--slate:oklch(45% 0.01 250);--text-light:oklch(90% 0.008 75);--text-muted:oklch(70% 0.01 250);--ease-out-expo:cubic-bezier(0.16,1,0.3,1);--ease-out-quint:cubic-bezier(0.22,1,0.36,1)}html{scroll-behavior:smooth;font-optical-sizing:auto}body{font-family:'Outfit',sans-serif;font-weight:300;color:var(--text-light);background:var(--obsidian);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}h1,h2,h3{font-family:'DM Serif Display',serif;font-weight:400;text-wrap:balance;line-height:1.1}nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 48px;display:flex;align-items:center;justify-content:space-between;transition:background .4s var(--ease-out-expo),padding .4s var(--ease-out-expo),transform .4s var(--ease-out-expo)}nav.scrolled{background:oklch(14% 0.01 270/.92);backdrop-filter:blur(16px);padding:16px 48px}nav.hidden{transform:translateY(-100%)}.nav-logo{display:flex;align-items:center;text-decoration:none}.nav-logo-mark{height:40px;width:auto;transition:transform .4s var(--ease-out-expo)}.nav-logo:hover .nav-logo-mark{transform:rotate(-8deg) scale(1.05)}.nav-links{display:flex;gap:36px;list-style:none}.nav-links a{font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;position:relative;transition:color .3s}.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--bronze);transition:width .4s var(--ease-out-expo)}.nav-links a:hover{color:var(--sand)}.nav-links a:hover::after{width:100%}.nav-links a.active{color:var(--sand)}.nav-links a.active::after{width:100%}.nav-cta{font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:12px 28px;background:var(--bronze);color:var(--obsidian);border:none;border-radius:2px;cursor:pointer;text-decoration:none;transition:background .2s,transform .3s var(--ease-out-expo),box-shadow .3s}.nav-cta:hover{background:var(--bronze-light);transform:translateY(-2px);box-shadow:0 8px 24px oklch(55% 0.1 65/.2)}.speaking-hero{min-height:90vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:140px 48px 100px;gap:80px;max-width:1400px;margin:0 auto;position:relative}.speaking-hero-content{position:relative;z-index:2}.speaking-hero-content .section-eyebrow{opacity:0;animation:fadeUp .8s .2s var(--ease-out-expo) forwards}.speaking-hero-content h1{font-size:clamp(2.8rem,5.5vw,4.5rem);color:var(--sand-light);margin-bottom:28px;opacity:0;animation:fadeUp .8s .4s var(--ease-out-expo) forwards}.speaking-hero-sub{font-size:clamp(1rem,1.3vw,1.1rem);font-weight:300;color:var(--text-muted);max-width:48ch;line-height:1.8;margin-bottom:44px;opacity:0;animation:fadeUp .8s .6s var(--ease-out-expo) forwards}.speaking-hero-content .btn-primary{opacity:0;animation:fadeUp .8s .8s var(--ease-out-expo) forwards}.speaking-hero-photo{position:relative;aspect-ratio:3/4;border-radius:2px;overflow:hidden;opacity:0;animation:fadeUp .8s .4s var(--ease-out-expo) forwards}.speaking-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .8s var(--ease-out-expo)}.speaking-hero-photo:hover img{transform:scale(1.03)}.speaking-hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,oklch(14% 0.01 270/.3) 0%,transparent 30%);pointer-events:none}.section-eyebrow{font-family:'Outfit',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--bronze);margin-bottom:20px}.btn-primary{font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:16px 40px;background:var(--bronze);color:var(--obsidian);border:none;border-radius:2px;cursor:pointer;text-decoration:none;position:relative;overflow:hidden;transition:background .3s,transform .3s var(--ease-out-expo),box-shadow .3s;display:inline-block}.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,transparent,oklch(100% 0 0/.15),transparent);transform:translateX(-100%);transition:transform .6s var(--ease-out-expo)}.btn-primary:hover::before{transform:translateX(100%)}.btn-primary:hover{background:var(--bronze-light);transform:translateY(-3px);box-shadow:0 12px 32px oklch(55% 0.1 65/.25)}.topics{padding:120px 48px;position:relative}.topics::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(to right,transparent,oklch(85% 0.02 75/.1),transparent)}.topics h2{font-size:clamp(2rem,4vw,3rem);color:var(--sand-light);margin-bottom:64px}.topics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;max-width:1200px}.topic-card{padding:40px 0 0;border-top:1px solid oklch(85% 0.02 75/.07);position:relative;transition:transform .4s var(--ease-out-expo)}.topic-card::after{content:'';position:absolute;top:-1px;left:0;width:0;height:1px;background:var(--bronze);transition:width .6s var(--ease-out-expo)}.topic-card:hover::after{width:100%}.topic-card:hover{transform:translateX(6px)}.topic-card h3{font-size:1.3rem;color:var(--sand);margin-bottom:12px}.topic-card p{font-size:.88rem;font-weight:300;color:var(--text-muted);line-height:1.75;max-width:36ch}.deliverables{padding:120px 48px;background:var(--obsidian-light)}.deliverables-inner{max-width:1200px;margin:0 auto}.deliverables h2{font-size:clamp(2rem,4vw,3rem);color:var(--sand-light);margin-bottom:64px}.deliverables-list{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 60px}.deliverable-item{display:flex;align-items:flex-start;gap:16px;padding:20px 0}.deliverable-icon{width:8px;height:8px;border-radius:50%;background:var(--bronze);flex-shrink:0;margin-top:8px}.deliverable-item span{font-size:.95rem;font-weight:400;color:var(--sand);line-height:1.5}.audiences{padding:120px 48px;max-width:1200px;margin:0 auto}.audiences h2{font-size:clamp(2rem,4vw,3rem);color:var(--sand-light);margin-bottom:24px}.audiences-lead{font-size:1rem;font-weight:300;color:var(--text-muted);max-width:55ch;line-height:1.8;margin-bottom:48px}.audience-tags{display:flex;flex-wrap:wrap;gap:12px}.audience-tag{font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:400;color:var(--sand);padding:10px 20px;border:1px solid oklch(85% 0.02 75/.12);border-radius:2px;transition:border-color .3s,background .3s}.audience-tag:hover{border-color:var(--bronze);background:oklch(18% 0.008 270)}.speaking-quote{padding:140px 48px;text-align:center;position:relative}.speaking-quote::before{content:'';position:absolute;top:50%;left:50%;width:600px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(circle,oklch(20% 0.04 65/.15) 0%,transparent 70%);border-radius:50%;pointer-events:none}.speaking-quote blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.3rem,2.5vw,1.8rem);color:var(--sand);max-width:700px;margin:0 auto;line-height:1.6;position:relative}.speaking-quote cite{display:block;font-family:'Outfit',sans-serif;font-style:normal;font-size:.7rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--bronze);margin-top:24px}.speaking-cta{padding:120px 48px;text-align:center}.speaking-cta h2{font-size:clamp(2.2rem,5vw,3.5rem);color:var(--sand-light);margin-bottom:20px}.speaking-cta p{font-size:1rem;font-weight:300;color:var(--text-muted);max-width:45ch;margin:0 auto 40px;line-height:1.8}footer{padding:72px 48px 44px;border-top:1px solid oklch(85% 0.02 75/.06);display:flex;justify-content:space-between;align-items:flex-end}.footer-left{display:flex;flex-direction:column;gap:10px}.footer-brand{font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--sand)}.footer-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.85rem;color:var(--slate)}.footer-right{display:flex;flex-direction:column;align-items:flex-end;gap:8px}.footer-contact{font-size:.8rem;font-weight:400;color:var(--text-muted);text-decoration:none;transition:color .2s}.footer-contact:hover{color:var(--sand)}.footer-location{font-size:.7rem;color:var(--slate);font-weight:300}@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease-out-expo),transform .9s var(--ease-out-expo)}.reveal.visible{opacity:1;transform:translateY(0)}.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px}.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--sand);margin:5px 0}@media(max-width:900px){nav{padding:16px 24px}nav.scrolled{padding:12px 24px}.nav-links,.nav-cta{display:none}.nav-toggle{display:block}.speaking-hero{grid-template-columns:1fr;padding:120px 24px 60px;gap:48px;min-height:auto}.speaking-hero-photo{aspect-ratio:1/1;order:-1}.topics{padding:80px 24px}.topics-grid{gap:32px}.deliverables{padding:80px 24px}.deliverables-list{grid-template-columns:1fr}.audiences{padding:80px 24px}.speaking-quote{padding:80px 24px}.speaking-cta{padding:80px 24px}footer{padding:48px 24px 32px;flex-direction:column;align-items:flex-start;gap:28px}.footer-right{align-items:flex-start}}@media(max-width:600px){.speaking-hero-content h1{font-size:2.4rem}.topics h2,.deliverables h2,.audiences h2,.speaking-cta h2{font-size:1.8rem}.topics-grid{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<nav id="nav">
+  <a href="../index.html" class="nav-logo"><img class="nav-logo-mark" src="https://lh3.googleusercontent.com/d/1ZbSz3kyKEK7LksxdpRTY0VecGDGxqYDM" alt="Ampersound Media Group"></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="index.html" class="active">Speaking</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+  <a href="https://forms.clickup.com/90141325083/f/2kydexrv-11414/7NF9VE05CSMYK9UWAP" target="_blank" class="nav-cta">Book Afia</a>
+  <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<section class="speaking-hero">
+  <div class="speaking-hero-content">
+    <p class="section-eyebrow">Keynote & Motivational Speaking</p>
+    <h1>A voice that moves the room</h1>
+    <p class="speaking-hero-sub">Afia Chin-Roberts brings 18+ years of live performance, emceeing, and storytelling to stages that need more than a presenter. She brings presence, energy, and the kind of connection that makes audiences lean in.</p>
+    <a href="https://forms.clickup.com/90141325083/f/2kydexrv-11414/7NF9VE05CSMYK9UWAP" target="_blank" class="btn-primary">Inquire About Availability</a>
+  </div>
+  <div class="speaking-hero-photo"><img src="https://lh3.googleusercontent.com/d/1b4RHX8i1OhT7d1K043PzY06LcYByCAVI" alt="Afia Chin-Roberts, Keynote Speaker"></div>
+</section>
+<section class="topics"><div class="reveal"><p class="section-eyebrow">Speaking Topics</p><h2>What Afia speaks on</h2></div><div class="topics-grid"><div class="topic-card reveal"><h3>Atmosphere as Strategy</h3><p>How intentional environment design shapes audience behavior, engagement, and memory. For event professionals and brand leaders.</p></div><div class="topic-card reveal"><h3>Presence Over Performance</h3><p>The art of showing up authentically in professional spaces. For women in leadership, creatives, and entrepreneurs navigating visibility.</p></div><div class="topic-card reveal"><h3>Building from Scratch</h3><p>Lessons from launching a boutique business with no blueprint. Resilience, identity, and the power of doing things differently.</p></div><div class="topic-card reveal"><h3>The Power of Sound & Story</h3><p>How sound, spoken word, and narrative shape culture, connection, and community. For educators, organizers, and creatives.</p></div><div class="topic-card reveal"><h3>Custom Topics</h3><p>Every audience is different. Afia develops custom keynotes tailored to your theme, audience, and event objectives.</p></div></div></section>
+<section class="deliverables"><div class="deliverables-inner"><div class="reveal"><p class="section-eyebrow">What's Included</p><h2>When you book Afia</h2></div><div class="deliverables-list reveal"><div class="deliverable-item"><div class="deliverable-icon"></div><span>Pre-event discovery call to understand your audience and goals</span></div><div class="deliverable-item"><div class="deliverable-icon"></div><span>Custom keynote or talk developed for your specific event</span></div><div class="deliverable-item"><div class="deliverable-icon"></div><span>30 to 60 minute keynote delivery (flexible to your schedule)</span></div><div class="deliverable-item"><div class="deliverable-icon"></div><span>Optional Q&A, panel moderation, or breakout facilitation</span></div><div class="deliverable-item"><div class="deliverable-icon"></div><span>Professional presence: early arrival, tech check, green room ready</span></div><div class="deliverable-item"><div class="deliverable-icon"></div><span>Post-event follow-up and audience resource sharing (if applicable)</span></div></div></div></section>
+<section class="audiences"><div class="reveal"><p class="section-eyebrow">Ideal For</p><h2>Who books Afia</h2><p class="audiences-lead">Conference organizers, corporate teams, nonprofits, universities, and community organizations looking for a speaker who connects, not just presents.</p></div><div class="audience-tags reveal"><span class="audience-tag">Corporate Conferences</span><span class="audience-tag">Leadership Summits</span><span class="audience-tag">Nonprofit Galas</span><span class="audience-tag">University Events</span><span class="audience-tag">Women's Empowerment</span><span class="audience-tag">Entrepreneurship Panels</span><span class="audience-tag">Community Gatherings</span><span class="audience-tag">Creative Industry Events</span><span class="audience-tag">Awards Ceremonies</span><span class="audience-tag">Team Retreats</span></div></section>
+<section class="speaking-quote"><div class="reveal"><blockquote>"I don't just deliver a talk. I create a moment. The kind that shifts how people feel when they leave the room."</blockquote><cite>Afia Chin-Roberts</cite></div></section>
+<section class="speaking-cta"><div class="reveal"><p class="section-eyebrow">Let's Connect</p><h2>Bring Afia to your stage</h2><p>Share your event details and we'll follow up with availability, custom topic options, and investment.</p><a href="https://forms.clickup.com/90141325083/f/2kydexrv-11414/7NF9VE05CSMYK9UWAP" target="_blank" class="btn-primary">Start the Conversation</a></div></section>
+<footer><div class="footer-left"><span class="footer-brand">Ampersound Media Group</span><span class="footer-tagline">Sound. Presence. Atmosphere.</span></div><div class="footer-right"><a href="mailto:contact@ampersoundmediagroup.com" class="footer-contact">contact@ampersoundmediagroup.com</a><span class="footer-location">Utah</span></div></footer>
+<script>let lastScroll=0;const nav=document.getElementById('nav');window.addEventListener('scroll',()=>{const scrollTop=window.scrollY;nav.classList.toggle('scrolled',scrollTop>60);if(scrollTop>lastScroll&&scrollTop>200)nav.classList.add('hidden');else nav.classList.remove('hidden');lastScroll=scrollTop});const reveals=document.querySelectorAll('.reveal');const revealObs=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObs.unobserve(entry.target)}})},{threshold:.12,rootMargin:'0px 0px -60px 0px'});reveals.forEach(el=>revealObs.observe(el));</script>
+</body>
+</html>
